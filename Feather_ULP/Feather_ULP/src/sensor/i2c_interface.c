@@ -28,6 +28,11 @@
 	i2c_master_enable(&module);
  }
 
+ void i2c_interface_disable(void)
+ {
+	i2c_master_disable(&module);
+ }
+
  void i2c_write_bytes(uint8_t * data, uint8_t data_length, uint8_t i2c_address, uint8_t reg)
  {
 	uint8_t buffer[data_length+2];

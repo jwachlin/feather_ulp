@@ -56,6 +56,9 @@
 #include <adc.h>
 #include <adc_callback.h>
 
+// From module: BOD - Brown Out Detector
+#include <bod.h>
+
 // From module: Common SAM0 compiler driver
 #include <compiler.h>
 #include <status_codes.h>
@@ -80,6 +83,11 @@
 
 // From module: Part identification macros
 #include <parts.h>
+
+// From module: RTC - Real Time Counter in Count Mode (Callback APIs)
+#include <rtc_count.h>
+#include <rtc_count_interrupt.h>
+#include <rtc_tamper.h>
 
 // From module: SERCOM I2C - Master Mode I2C (Polled APIs)
 #include <i2c_common.h>
