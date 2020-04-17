@@ -22,7 +22,8 @@ int main (void)
 
 	// Set up to performance level 0, buck converter
 	// Clock must be <12MHz, other clocks must meet specs in datasheet
-	system_switch_performance_level(SYSTEM_PERFORMANCE_LEVEL_0); 
+	system_switch_performance_level(SYSTEM_PERFORMANCE_LEVEL_0);
+	system_performance_level_enable(); // Lock into PL0
 
 	struct system_voltage_regulator_config vreg_config;
 	system_voltage_regulator_get_config_defaults(&vreg_config);
