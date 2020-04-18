@@ -115,6 +115,18 @@ void init_bmp280(void)
     bmp280_write_configuration(&config);
 }
 
+void sleep_bmp280(void)
+{
+	bmp280_config_t config = {
+		.t_sb       = BMP280_T_SB_1000ms,
+		.filter     = BMP280_FILTER_OFF,
+		.spi3w_en   = BMP280_SPI_4_WIRE,
+		.osrs_t     = BMP280_TEMP_OSRS_x1,
+		.osrs_p     = BMP280_PRES_OSRS_x1,
+		.mode       = BMP280_MODE_SLEEP,
+	};
+	bmp280_write_configuration(&config);
+}
 	
 /*!
  * \brief Temperature compensation according to Bosch BMP280 datasheet (Pg. 21-23).

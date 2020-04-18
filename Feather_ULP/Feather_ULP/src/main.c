@@ -11,6 +11,7 @@
 #include "sensor/lis3dh.h"
 #include "sensor/bmp280.h"
 #include "lib/rtc_interface.h"
+#include "lib/adc_interface.h"
 
 int main (void)
 {
@@ -23,7 +24,7 @@ int main (void)
 	// Set up to performance level 0, buck converter
 	// Clock must be <12MHz, other clocks must meet specs in datasheet
 	system_switch_performance_level(SYSTEM_PERFORMANCE_LEVEL_0);
-	system_performance_level_enable(); // Lock into PL0
+	system_performance_level_disable(); // Lock into PL0
 
 	struct system_voltage_regulator_config vreg_config;
 	system_voltage_regulator_get_config_defaults(&vreg_config);
@@ -33,7 +34,9 @@ int main (void)
 	system_voltage_regulator_set_config(&vreg_config);
 
 	bod33_disable();
+	bod12_disable();
 	rtc_init();
+	adc_interface_init();
 
 	i2c_interface_init();
 	init_lis3dh();
@@ -43,7 +46,7 @@ int main (void)
 	int32_t i;
 	for(;;)
 	{	
-		uint32_t delay_time = 2000;
+		uint32_t delay_time = 5000;
 		if((i+1) % 3 == 0)
 		{
 			rtc_standby_delay(delay_time);

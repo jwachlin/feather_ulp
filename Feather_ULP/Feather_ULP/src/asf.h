@@ -115,6 +115,10 @@
 // From module: SYSTEM - Reset Management for SAM L21
 #include <reset.h>
 
+// From module: Sleep manager - SAML implementation
+#include <saml/sleepmgr.h>
+#include <sleepmgr.h>
+
 // From module: WDT - Watchdog Timer (Callback APIs)
 #include <wdt.h>
 #include <wdt_callback.h>

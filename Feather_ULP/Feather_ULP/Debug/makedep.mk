@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+src\ASF\common\services\sleepmgr\saml\sleepmgr.c
+
 src\ASF\sam0\drivers\adc\adc_sam_l_c\adc.c
 
 src\ASF\sam0\drivers\adc\adc_sam_l_c\adc_callback.c

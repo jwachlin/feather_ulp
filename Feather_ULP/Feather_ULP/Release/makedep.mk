@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+src\ASF\common\services\sleepmgr\saml\sleepmgr.c
+
 src\ASF\sam0\drivers\adc\adc_sam_l_c\adc.c
 
 src\ASF\sam0\drivers\adc\adc_sam_l_c\adc_callback.c
@@ -13,6 +15,8 @@ src\ASF\sam0\drivers\rtc\rtc_sam_l_c\rtc_count.c
 src\ASF\sam0\drivers\rtc\rtc_sam_l_c\rtc_count_interrupt.c
 
 src\ASF\sam0\drivers\sercom\i2c\i2c_sam0\i2c_master.c
+
+src\lib\adc_interface.c
 
 src\lib\rtc_interface.c
 

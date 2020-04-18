@@ -31,6 +31,12 @@
 	i2c_write_bytes(&data, 1, LIS3DH_ADDRESS, REG_CTRL_REG4);
  }
 
+ void sleep_lis3dh(void)
+ {
+	uint8_t data = 0;   // shut down mode, ODR all 0
+	i2c_write_bytes(&data, 1, LIS3DH_ADDRESS, REG_CTRL_REG1);
+ }
+
  void read_lis3dh_raw(lis3dh_data_raw_t * data)
  {
 	uint8_t buffer[6];

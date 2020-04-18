@@ -129,6 +129,7 @@ typedef struct {
 } bmp280_meas_t;
 
 void init_bmp280(void);
+void sleep_bmp280(void);
 void read_bmp280(bmp280_meas_t * meas);
 void read_bmp280_integer(bmp280_raw_data_t * meas);
 

@@ -31,6 +31,6 @@ void system_board_init(void)
 	ioport_set_pin_mode(A4_PIN, A4_PIN_MUX);
 	ioport_set_pin_mode(A5_PIN, A5_PIN_MUX);
 
-	ioport_set_pin_mode(TX_PIN, TX_PIN_MUX);
-	ioport_set_pin_mode(RX_PIN, RX_PIN_MUX);
+	/*ioport_set_pin_mode(TX_PIN, TX_PIN_MUX);
+	ioport_set_pin_mode(RX_PIN, RX_PIN_MUX);*/
 }

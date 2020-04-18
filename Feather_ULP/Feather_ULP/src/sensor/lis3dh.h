@@ -50,6 +50,7 @@ typedef struct
 } lis3dh_data_g_t;
 
 void init_lis3dh(void);
+void sleep_lis3dh(void);
 void read_lis3dh_raw(lis3dh_data_raw_t * data);
 void read_lis3dh_g(lis3dh_data_g_t * data);
 
