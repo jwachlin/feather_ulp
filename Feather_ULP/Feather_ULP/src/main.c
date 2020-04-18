@@ -65,6 +65,8 @@ int main (void)
 		bmp280_meas_t baro_data;
 		read_bmp280(&baro_data);
 
+		uint16_t adc_value = adc_interface_read_pin(A0_PIN);
+
 		i++;
 	}
 }

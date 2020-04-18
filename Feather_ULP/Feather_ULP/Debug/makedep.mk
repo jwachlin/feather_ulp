@@ -16,6 +16,8 @@ src\ASF\sam0\drivers\rtc\rtc_sam_l_c\rtc_count_interrupt.c
 
 src\ASF\sam0\drivers\sercom\i2c\i2c_sam0\i2c_master.c
 
+src\lib\adc_interface.c
+
 src\lib\rtc_interface.c
 
 src\sensor\bmp280.c
