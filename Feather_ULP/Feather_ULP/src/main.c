@@ -15,6 +15,8 @@
 
 int main (void)
 {
+	int32_t i;
+
 	system_init();
 	delay_init();
 	system_interrupt_enable_global();
@@ -42,8 +44,13 @@ int main (void)
 	init_lis3dh();
 	init_bmp280();
 
-	/* Insert application code here, after the board has been initialized. */
-	int32_t i;
+	for(i=0;i<3;i++)
+	{
+		rtc_idle_delay(200);
+		ioport_set_pin_level(D9_PIN, true);
+		ioport_set_pin_level(D9_PIN, false);
+	}
+	
 	for(;;)
 	{	
 		uint32_t delay_time = 5000;
@@ -66,6 +73,9 @@ int main (void)
 		read_bmp280(&baro_data);
 
 		uint16_t adc_value = adc_interface_read_pin(A0_PIN);
+
+		ioport_set_pin_level(D9_PIN, true);
+		ioport_set_pin_level(D9_PIN, false);
 
 		i++;
 	}
