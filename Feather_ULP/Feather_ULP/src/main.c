@@ -16,8 +16,8 @@
 
 static inline void flash_led(void)
 {
-	pwm_write(80);
-	delay_us(100);
+	pwm_write(160);
+	delay_us(50);
 	pwm_write(0);
 }
 
@@ -28,8 +28,6 @@ int main (void)
 	system_init();
 	delay_init();
 	system_interrupt_enable_global();
-
-	delay_ms(50);
 
 	// Set up to performance level 0, buck converter
 	// Clock must be <12MHz, other clocks must meet specs in datasheet
@@ -48,6 +46,9 @@ int main (void)
 	rtc_init();
 	adc_interface_init();
 	pwm_interface_init();
+
+	// Delay in standby for a bit to ideally let voltage rise better
+	rtc_standby_delay(5000);
 
 	i2c_interface_init();
 	init_lis3dh();
