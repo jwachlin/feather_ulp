@@ -12,6 +12,14 @@
 #include "sensor/bmp280.h"
 #include "lib/rtc_interface.h"
 #include "lib/adc_interface.h"
+#include "lib/pwm_interface.h"
+
+static inline void flash_led(void)
+{
+	pwm_write(80);
+	delay_us(100);
+	pwm_write(0);
+}
 
 int main (void)
 {
@@ -39,6 +47,7 @@ int main (void)
 	bod12_disable();
 	rtc_init();
 	adc_interface_init();
+	pwm_interface_init();
 
 	i2c_interface_init();
 	init_lis3dh();
@@ -47,8 +56,7 @@ int main (void)
 	for(i=0;i<3;i++)
 	{
 		rtc_idle_delay(200);
-		ioport_set_pin_level(D9_PIN, true);
-		ioport_set_pin_level(D9_PIN, false);
+		flash_led();
 	}
 	
 	for(;;)
@@ -74,8 +82,7 @@ int main (void)
 
 		uint16_t adc_value = adc_interface_read_pin(A0_PIN);
 
-		ioport_set_pin_level(D9_PIN, true);
-		ioport_set_pin_level(D9_PIN, false);
+		flash_led();
 
 		i++;
 	}

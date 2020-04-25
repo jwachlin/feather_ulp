@@ -16,7 +16,13 @@ src\ASF\sam0\drivers\rtc\rtc_sam_l_c\rtc_count_interrupt.c
 
 src\ASF\sam0\drivers\sercom\i2c\i2c_sam0\i2c_master.c
 
+src\ASF\sam0\drivers\tc\tc_interrupt.c
+
+src\ASF\sam0\drivers\tc\tc_sam_l_c\tc.c
+
 src\lib\adc_interface.c
+
+src\lib\pwm_interface.c
 
 src\lib\rtc_interface.c
 
