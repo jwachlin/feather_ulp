@@ -24,8 +24,8 @@
 	config.counter_8_bit.value = 0;
 	config.counter_8_bit.period = 255;
 	config.pwm_channel[0].enabled = true;
-	config.pwm_channel[0].pin_out = D9_PIN;
-	config.pwm_channel[0].pin_mux = D9_PIN_PWM_PINMUX;
+	config.pwm_channel[0].pin_out = LED_PIN;
+	config.pwm_channel[0].pin_mux = LED_PIN_PWM_PINMUX;
 
 	tc_init(&module, TC3, &config);
 
