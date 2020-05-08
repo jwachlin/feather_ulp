@@ -4,6 +4,8 @@
 
 src\ASF\common\services\sleepmgr\saml\sleepmgr.c
 
+src\sensor\opt3004.c
+
 src\ASF\sam0\drivers\adc\adc_sam_l_c\adc.c
 
 src\ASF\sam0\drivers\adc\adc_sam_l_c\adc_callback.c

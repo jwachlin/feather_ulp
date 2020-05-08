@@ -10,6 +10,7 @@
 #include "sensor/i2c_interface.h"
 #include "sensor/lis3dh.h"
 #include "sensor/bmp280.h"
+#include "sensor/opt3004.h"
 #include "lib/rtc_interface.h"
 #include "lib/adc_interface.h"
 #include "lib/pwm_interface.h"
@@ -53,6 +54,7 @@ int main (void)
 	i2c_interface_init();
 	init_lis3dh();
 	init_bmp280();
+	init_opt3004();
 
 	for(i=0;i<3;i++)
 	{
@@ -82,6 +84,8 @@ int main (void)
 		read_bmp280(&baro_data);
 
 		uint16_t adc_value = adc_interface_read_pin(A0_PIN);
+
+		uint32_t light_lux = get_opt3004_ambient_light_level_lux();
 
 		flash_led();
 

@@ -688,6 +688,12 @@
     <Compile Include="src\ASF\common\services\sleepmgr\saml\sleepmgr.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\sensor\opt3004.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sensor\opt3004.h">
+      <SubType>compile</SubType>
+    </Compile>
     <None Include="src\ASF\common\services\sleepmgr\sleepmgr.h">
       <SubType>compile</SubType>
     </None>
